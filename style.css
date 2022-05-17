@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap');
+
+/* * selector selects everything in the page and set it s margin to 0 */
+* {
+    margin: 0;
+    padding: 0;
+    /* default settings of html is changed to zero over here */
+}
+
+body {
+    /* the background and font are changed of whole body */
+    background: #f6f6f7;
+    font-family: 'Fira Sans',
+        sans-serif;
+}
+
+.logo img {
+    /* This tag targets the image inside logo class  */
+    width: 7%;
+    /* margin is set to .6 rem  */
+    margin: .6rem;
+    /* rem unit is used so that our unit may remain responsive according ot different browser's settings because rem unit is based on browser's default settings  */
+}
+
+.imageHolder img {
+    /* This tag targets all the 6 major images in our app   */
+    width: 100%;
+}
+
+.mainWrapper {
+    /* main wrapper class works as a parent div and everything resides inside this div */
+    background: #fefefd;
+
+    margin-right: 12rem;
+    /* rem unit is used so that our unit may remain responsive according ot different browser's settings because rem unit is based on browser's default settings  */
+    margin-left: 12rem;
+}
+
+.imageHolder {
+    /* grid is initialized over here */
+    display: grid;
+    /* grid columns are set to only limit to three  this is set as the default behavior*/
+    grid-template-columns: 1fr 1fr 1fr;
+    /* fr means fraction it is equally set */
+    grid-template-rows: 1fr 1fr;
+    /* default behavior of rows are set to two */
+
+}
+
+p {
+    /* margin of all p tags are set to 1rem */
+    margin: 1rem;
+}
+
+footer {
+    background: #000;
+    color: #f6f6f7;
+    /* height is increased */
+    height: 10vh;
+    /* unit is used vh which means set the size of 10% view port */
+    display: flex;
+    /* flex is set here to align our items */
+    justify-content: center;
+    /* items are aligned to center on  x axis */
+    align-items: center;
+    /* items are aligned to center on  y axis */
+}
+
+@media screen and (min-width: 1024px) {
+
+    /* the columns and row settings for above 1024 pixels screens are set here */
+    .imageHolder {
+        /* Although this is already default behavior but to be sure  this media query is added */
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    body {
+        /* font size is changed by rem unit */
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .imageHolder {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    body {
+        /* font size is changed by rem unit */
+        font-size: 1.7rem;
+    }
+
+    .mainWrapper {
+        background: #fefefd;
+        /* margins are set to zero according to the requirement view */
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    /* when the width is max 800 pixels these styling should be applied */
+    .imageHolder {
+        /* two columns are set to have at 800 px */
+        grid-template-columns: 1fr 1fr;
+        /* three rows are set to have at 800 px */
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .imageHolder {
+        /* two columns are set to have at 480 px */
+        grid-template-columns: 1fr;
+        /* 6 rows are set to have at 480 px */
+        grid-template-rows: repeat(auto, 6);
+        /* repeat auto 6 means repeat auto unit 6 times */
+    }
+}
